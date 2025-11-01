@@ -1,0 +1,24 @@
+# API Keys and sensitive configuration
+config/api-config.js
+
+# Node modules (if using build tools later)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+

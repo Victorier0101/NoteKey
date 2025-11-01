@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoteKey - your best study buddy :)</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="notekey-container">
+    <!-- Header -->
+    <header class="notekey-header">
+      <input type="text" class="notekey-title-input" id="noteTitleInput" placeholder="Note Title" />
+      <button class="notekey-close-btn" id="closeBtn" title="Close panel">✕</button>
+    </header>
+
+    <!-- Error Banner (hidden by default) -->
+    <div class="notekey-error-banner hidden" id="errorBanner">
+      <span class="error-message" id="errorMessage"></span>
+      <button class="error-close" id="errorClose">✕</button>
+    </div>
+
+    <!-- Section 1: Highlighted Text -->
+    <section class="notekey-highlighted-section">
+      <label class="section-label">Highlighted Text:</label>
+      <div 
+        class="highlighted-text-box" 
+        id="highlightedText" 
+        contenteditable="true"
+        data-placeholder="Select text on the page to get started..."
+      ></div>
+      
+      <div class="action-buttons">
+        <button class="action-btn btn-add" id="addBtn" disabled>
+          <span class="btn-icon">+</span> Add
+        </button>
+        <button class="action-btn btn-explain" id="explainBtn" disabled>
+          <span class="btn-icon">📖</span> Explain
+        </button>
+      </div>
+    </section>
+
+    <!-- Section 2: Note Selection & Management -->
+    <section class="notekey-note-selection">
+      <label class="section-label">Note Selection</label>
+      <div class="note-controls">
+        <select class="note-dropdown" id="noteDropdown">
+          <option value="">Loading...</option>
+        </select>
+        <button class="icon-btn btn-rename" id="renameNoteBtn" title="Rename note">✏️</button>
+        <button class="icon-btn btn-new" id="newNoteBtn" title="Create new note">+</button>
+        <button class="icon-btn btn-delete" id="deleteNoteBtn" title="Delete note">🗑</button>
+      </div>
+
+      <!-- Rich Text Toolbar -->
+      <div class="rich-text-toolbar">
+        <select class="font-selector" id="fontSelector">
+          <option value="Lexend">Lexend</option>
+          <option value="Arial">Arial</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Courier New">Courier New</option>
+        </select>
+        <button class="format-btn" data-command="bold" title="Bold">B</button>
+        <button class="format-btn" data-command="italic" title="Italic">I</button>
+        <button class="format-btn" data-command="underline" title="Underline">U</button>
+      </div>
+    </section>
+
+    <!-- Section 3: Notes Editor -->
+    <section class="notekey-editor-section">
+      <div 
+        class="notes-editor" 
+        id="notesEditor" 
+        contenteditable="true"
+        data-placeholder="Type your notes here..."
+      ></div>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../utils/storage.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
+
